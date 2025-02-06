@@ -12,16 +12,22 @@ int main() {
                 float area;
                 float pib;
                 int pontos_turisticos;
+                // Nível Aventureiro
+                float densidade_populacional;
+                float PIB_per_Capita;
 
                 //obtendo os dados 
                 printf("Digite o Estado:\n");
                 scanf("%2s", &estado);
+                getchar();
 
                 printf("Digite o Código da carta\n");
                 scanf("%3s", &codigo_da_carta);
+                getchar();
 
                 printf("Digite o Nome da Cidade\n");
-                scanf("%14s", &nome_da_cidade);
+                fgets(nome_da_cidade, sizeof(nome_da_cidade), stdin);
+                nome_da_cidade[strcspn(nome_da_cidade, "\n")] = '\0';
 
                 printf("Digite a População:\n");
                 scanf("%d", &populacao);
@@ -34,6 +40,10 @@ int main() {
 
                 printf("Digite o Número de Pontos Turísticos:\n");
                 scanf("%d", &pontos_turisticos);
+                // Nível Aventureiro
+                densidade_populacional = populacao/area;
+
+                PIB_per_Capita = pib/populacao;
 
                 printf("Cadastro realizado com sucesso!\n");
 
@@ -46,6 +56,9 @@ int main() {
                 printf("Área: %.2f km²\n", area);
                 printf("PIB: %.2f\n", pib);
                 printf("Pontos Turísticos: %d\n", pontos_turisticos);
+                // Nível Aventureiro
+                printf("Densidade Populacional: %f pessoas/km²\n", densidade_populacional);
+                printf("PIB per Capita: %f reais\n", PIB_per_Capita);
 
                 printf("***************************************************************************\n");
 
